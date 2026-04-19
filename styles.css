@@ -1,0 +1,111 @@
+body {
+   font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  input {
+    padding: 10px;
+    margin: 10px;
+    /*  width: 70%;
+   border-radius: 5px;
+   border: 1px solid #ccc;*/
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    background-color: #f8f9fa;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
+  #ganttChart {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ganttBlock {
+    padding: 10px;
+    
+    color: white;
+    margin: 5px;
+    
+  }
+  
+  #ganttChart div {
+    margin-right: 10px;
+  }
+  
+  #ganttChart div:last-child {
+    margin-right: 0;
+  }
+  .process-input {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+  }
+  
+  input {
+    flex: 2;
+    padding: 5px;
+  }
+  
+  .ganttBlock {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 10px;
+    
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  /*th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    
+  }
+ */
+  
+  

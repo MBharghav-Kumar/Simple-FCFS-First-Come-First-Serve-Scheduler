@@ -5,26 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operating System</title>
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *{
+            margin :0;
+            padding:0;
+            box-sizing:border-box;
 
-        /* Ensure full height and width */
-        html, body {
-            height: 100%;
-            width: 100%;
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
         }
-
-        /* Flexbox for centering content */
+        html,body{
+            height:100%;
+            width:100%;
+            font-family:'Arial',sans-serif;
+            background-color:#f4f4f9;
+        }
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
         }
 
         header {
@@ -37,24 +33,21 @@
             box-shadow: 0 4px 2px -2px gray;
         }
 
-        /* Flexbox container for the cards */
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 5px;
-            width:90%;
-            max-width:1200px;
-            margin :0 auto;
-            flex-grow: 1; /* Take up available space */
+            padding: 10px;
+            margin: 10px;
         }
 
         .card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 400px;
             margin: 20px;
+            width: 100vw;
+            min-height:70vh;
             overflow: hidden;
             transition: transform 0.3s;
         }
@@ -63,36 +56,19 @@
             transform: scale(1.05);
         }
 
+        /* Placeholder for empty content */
         .card-placeholder {
             width: 100%;
             background-color: #e0e0e0;
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 10px;
-        }
-
-        .member-info {
+            min-height: 100px; /* Adjust the height for empty content */
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-
-        .member-info h6 {
-            margin: 0;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .roll-number {
-            font-size: 14px;
+            justify-content: center;
+            align-items: center;
             color: #777;
-            margin-bottom: 5px;
-        }
-
-        .contribution {
-            font-size: 12px;
-            color: #555;
+            font-size: 16px;
         }
 
         .card-content {
@@ -104,12 +80,6 @@
             font-size: 20px;
             margin: 0 0 20px 0;
             color: #333;
-        }
-
-        .card-content p {
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 20px;
         }
 
         button {
@@ -127,19 +97,17 @@
         button:hover {
             background-color: #45a049;
         }
-        
-    
 
-        /* Fixed footer at the bottom */
         footer {
             text-align: center;
             padding: 10px;
             background-color: #333;
             color: white;
+            position: fixed;
             width: 100%;
+            bottom: 0;
         }
 
-        /* Responsive card width for smaller screens */
         @media screen and (max-width: 768px) {
             .card {
                 width: 100%;
@@ -153,53 +121,77 @@
     OPERATING SYSTEM PROJECT
 </header>
 
-<div class="container">
-    <div class="card">
-        <div class="card-content">
-            <h3>Team Members</h3>
-        </div>
 
-        <!-- Team members information -->
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>FCFS Scheduling Algorithm</h3>
+                </div>
+        
         <div class="card-placeholder">
-         <div class="member-info">
-                <h6>Name: M.Bharghav Kumar</h6>
-                <p class="roll-number">Roll No: L027</p>
-                <p class="roll-number">SAP ID: 70572200016</p>
-                <p class="contribution">Contribution: Frontend</p>
-            </div>
-            
-            <div class="member-info">
-                <h6>Name: Mani Shanker</h6>
-                <p class="roll-number">Roll No: L025</p>
-                <p class="roll-number">SAP ID: 705722000014</p>
-                <p class="contribution">Contribution: Functionality</p>
-            </div>
+         <div>   <p><b>Definition :</b> FCFS is a non-preemptive, simple and easy-to-implement CPU scheduling algorithm.It assigns the CPU tot the process that arrives first in the ready queue and executes it until its completion.</p><br>
+           <p><b>Key characteristics : </b></p>
+           <p><b>1.non-preemptive : </b>Once a process is allocated to the CPU, it continues to execute until it completes or terminates.</p>
+<p><b>2.FIFO(First-In-First-Out) queue : </b>Processes are served in the order they arrive in the ready queue.</p>
+<p><b>3.Simple : </b>Easy to implement and understand.</p>
+<p><b>4.No priority : </b>All processes are treated equally, with no consideration for priority or urgency.</p>            
+<p><b>Example :</b></p>
+<p>Suppose we have five processes(P1-P5) with arrival times and burst times as follows :</p> 
+<table bgcolor="black" width ="500" height="35">
+<tr bgcolor="grey">
+    <th width="100" >Process</th>
+    <th width="100">Arrival Time(AT)</th>
+    <th width="100">Burst Time(BT)</th>
+</tr>
+<tr bgcolor="lightgrey" align="center">
+<td>P1</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr bgcolor="lightgrey" align="center" >
+    <td>P2</td>
+    <td>1</td>
+    <td>2</td>
+</tr>
+<tr bgcolor="lightgrey" align="center">
+    <td>P3</td>
+    <td>2</td>
+    <td>6</td>
+</tr>
+<tr bgcolor="lightgrey" align="center">
+    <td>P4</td>
+    <td>4</td>
+    <td>4</td>
+</tr>
+<tr bgcolor="lightgrey" align="center">
+    <td>P5</td>
+    <td>5</td>
+    <td>2</td>
+</tr>
 
-            <div class="member-info">
-                <h6>Name: Sowmya</h6>
-                <p class="roll-number">Roll No: L054</p>
-                <p class="roll-number">SAP ID: 70572200053</p>
-                <p class="contribution">Contribution: Functionality </p>
-            </div>
+</table> <br>
+<p>Using FCFS, the scheduling order would be :</p>
+<p>P1(arrives 1<sup>st</sup>, executes for 3 time units)</p>
+<p>P2(arrives 2<sup>nd</sup>, executes for 2 time units)</p>
+<p>P3(arrives 3<sup>rd</sup>, executes for 6 time units)</p>
+<p>P4(arrives 4<sup>th</sup>, executes for 4 time units)</p>
+<p>P5(arrives 5<sup>th</sup>, executes for 2 time units)</p><br>
+<p><b>Advantages : </b><br>
+1.Simple to implement and understand<br>
+2.Easy to manage context switching.</p><br>
+<p><b>Disadvantages : </b><br>
+1.Starvation : Low-priority processes may never get executed if high-priority processes keep arriving.<br>
+2.Convey Effect : A sequence of short-burst processes can lead to inefficient CPU utilization.<br>
+3.Not suitable for time-sharing systems,as it does not provide fair allocation of CPU time.<br>
+</p>
+</div>
 
-            <div class="member-info">
-                <h6>Name: Sai Vijaya Lakshmi</h6>
-                <p class="roll-number">Roll No: L046</p>
-                <p class="roll-number">SAP ID: 70572200044</p>
-                <p class="contribution">Contribution: Testing and Debugging</p>
-            </div>
-            <div class="member-info">
-                <h6>Name: Charala Pujitha</h6>
-                <p class="roll-number">Roll No: L028</p>
-                <p class="roll-number">SAP ID: 70572200017</p>
-                <p class="contribution">Contribution: Testing and Debugging</p>
-            </div>
         </div>
 
         <div class="card-content">
-            <p>Details about each team member, their roll numbers, SAP IDs, and their contributions to the project.</p>
-            <!-- Button to redirect to another page -->
-            <button onclick="location.href='2.html'">Start</button>
+            
+            <button onclick="location.href='2.html'">Start</button><br>
+            <button onclick="location.href='index.html'">Back</button>
         </div>
     </div>
 </div>

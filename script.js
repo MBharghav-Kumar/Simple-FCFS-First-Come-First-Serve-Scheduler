@@ -96,7 +96,7 @@ function calculateWTandTAT() {
 function displayResults() {
   resultsList.innerHTML = ''; // Clear previous results
   backButton.addEventListener('click', function() {
-    window.location.href = 'index.html'; // Redirect to index.html
+    window.location.href = '1.html'; // Redirect to index.html
   });
   
   

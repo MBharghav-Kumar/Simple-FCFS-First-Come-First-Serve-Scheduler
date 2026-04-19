@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FCFS Scheduling</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating System</title>
+    <style>
+        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* Ensure full height and width */
         html, body {
             height: 100%;
             width: 100%;
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f9;
         }
+
+        /* Flexbox for centering content */
         body {
             display: flex;
             flex-direction: column;
-            
+            justify-content: space-between;
         }
+
         header {
             background-color: #4CAF50;
             color: white;
@@ -30,25 +36,33 @@
             font-weight: bold;
             box-shadow: 0 4px 2px -2px gray;
         }
+
+        /* Flexbox container for the cards */
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-grow: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 5px;
+            width:90%;
+            max-width:1200px;
+            margin :0 auto;
+            flex-grow: 1; /* Take up available space */
         }
-        .form-container, .results-container {
+
+        .card {
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: center;
+            width: 400px;
+            margin: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
         }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
         .card-placeholder {
             width: 100%;
             background-color: #e0e0e0;
@@ -56,33 +70,48 @@
             margin-bottom: 20px;
             border-radius: 10px;
         }
-        .results-container{
-            background-color: #e0e0e0; 
+
+        .member-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .member-info h6 {
+            margin: 0;
+            font-size: 16px;
             color: #333;
-            box-shadow: 0 4px 2px -2px gray;
         }
-        input[type="number"] {
-            padding: 10px;
-            margin: 10px;
-            width: 100%;
-            max-width: 300px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size:14px;
-        }
-        .process-input{
-            display:flex;
-            flex-wrap: wrap;
-            justify-content:space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .process-label {
-            font-size:16px;
-            width:100%;
+
+        .roll-number {
+            font-size: 14px;
+            color: #777;
             margin-bottom: 5px;
-            text-align:left;
         }
+
+        .contribution {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .card-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-size: 20px;
+            margin: 0 0 20px 0;
+            color: #333;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
         button {
             background-color: #4CAF50;
             color: white;
@@ -92,31 +121,16 @@
             border-radius: 5px;
             cursor: pointer;
             display: block;
-            margin: 10px auto;
+            margin: 0 auto;
         }
 
         button:hover {
             background-color: #45a049;
         }
-
-        h1, h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            padding: 10px;
-            background-color: #f8f9fa;
-            margin: 5px 0;
-            border-radius: 5px;
-        }
-         
         
+    
+
+        /* Fixed footer at the bottom */
         footer {
             text-align: center;
             padding: 10px;
@@ -124,9 +138,10 @@
             color: white;
             width: 100%;
         }
-        /* Responsive design for smaller screens */
+
+        /* Responsive card width for smaller screens */
         @media screen and (max-width: 768px) {
-            .form-container, .results-container {
+            .card {
                 width: 100%;
             }
         }
@@ -134,47 +149,64 @@
 </head>
 <body>
 
+<header>
+    OPERATING SYSTEM PROJECT
+</header>
 
-  <header>
-    OPERATING SYSTEM PROJECT - FCFS SCHEDULING
-  </header>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <h3>Team Members</h3>
+        </div>
 
-  <div class="container">
-    
-    <div class="form-container">
-      <h1>FCFS Scheduling</h1>
+        <!-- Team members information -->
+        <div class="card-placeholder">
+         <div class="member-info">
+                <h6>Name: M.Bharghav Kumar</h6>
+                <p class="roll-number">Roll No: L027</p>
+                <p class="roll-number">SAP ID: 70572200016</p>
+                <p class="contribution">Contribution: Frontend</p>
+            </div>
+            
+            <div class="member-info">
+                <h6>Name: Mani Shanker</h6>
+                <p class="roll-number">Roll No: L025</p>
+                <p class="roll-number">SAP ID: 705722000014</p>
+                <p class="contribution">Contribution: Functionality</p>
+            </div>
 
-      <div class="card-placeholder">
-      <form id="processForm">
-        <input type="number" id="numProcesses" placeholder="Enter number of processes" required>
-        <button type="submit">Submit</button>
-      </form>
+            <div class="member-info">
+                <h6>Name: Sowmya</h6>
+                <p class="roll-number">Roll No: L054</p>
+                <p class="roll-number">SAP ID: 70572200053</p>
+                <p class="contribution">Contribution: Functionality </p>
+            </div>
 
-      <div id="processInputs"></div>
-      <button id="calculateBtn" style="display: none;">Calculate FCFS</button>
-    </div>
+            <div class="member-info">
+                <h6>Name: Sai Vijaya Lakshmi</h6>
+                <p class="roll-number">Roll No: L046</p>
+                <p class="roll-number">SAP ID: 70572200044</p>
+                <p class="contribution">Contribution: Testing and Debugging</p>
+            </div>
+            <div class="member-info">
+                <h6>Name: Charala Pujitha</h6>
+                <p class="roll-number">Roll No: L028</p>
+                <p class="roll-number">SAP ID: 70572200017</p>
+                <p class="contribution">Contribution: Testing and Debugging</p>
+            </div>
+        </div>
 
-    
-      <p>Process details and results will be displayed here.</p>
-    </div>
-
-    <div class="form-container">
-    <div class="results-container">
-      <h2>Results</h2>
-      <ul id="resultsList"></ul>
-
-      <div id="ganttChart"></div>
-
-      <div id="readyQueue"></div>
+        <div class="card-content">
+            <p>Details about each team member, their roll numbers, SAP IDs, and their contributions to the project.</p>
+            <!-- Button to redirect to another page -->
+            <button onclick="location.href='1.html'">Start</button>
+        </div>
     </div>
 </div>
-<button id="backButton" style="display: none;">Back</button>
-</div>
 
-  <footer>
+<footer>
     &copy; 2024 Operating System | All rights reserved.
-  </footer>
+</footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
